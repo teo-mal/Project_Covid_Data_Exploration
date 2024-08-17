@@ -1,4 +1,5 @@
---This query calculates the percentage of the population that has been vaccinated at least once against COVID-19 for each location and date where data is available. The percentage is calculated by dividing the total number of vaccinations by the population for each location on a specific date.
+--This query calculates the percentage of the population that has been vaccinated at least once against COVID-19 for each location and date where data is available.
+--The percentage is calculated by dividing the total number of vaccinations by the population for each location on a specific date.
 
 SELECT
     covid_deaths.continent,
