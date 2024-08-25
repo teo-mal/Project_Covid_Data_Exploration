@@ -1,11 +1,12 @@
 -- Lets find every country's total infection percentage
 -- This query calculates the total infection percentage from COVID-19 for each country
-select
+SELECT
     location,
     population,
     MAX(total_cases) as total_infected_count,
     (MAX(total_cases) / population) * 100 AS total_infection_percentage
-from covid_deaths 
+FROM
+    covid_deaths 
 GROUP BY
     location,
     population
