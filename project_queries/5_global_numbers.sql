@@ -202,8 +202,7 @@ WHERE
     continent is not NULL
 HAVING
     (MAX(total_deaths)/ NULLIF (MAX(total_cases), 0))*100 is not NULL
-ORDER BY
-    MAX(total_cases)
+
 
 /*
 RESULTS
