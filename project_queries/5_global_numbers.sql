@@ -199,7 +199,7 @@ ORDER BY
 FROM
     covid_deaths
 WHERE
-    continent is not NULL
+    continent is  NULL
 HAVING
     (MAX(total_deaths)/ NULLIF (MAX(total_cases), 0))*100 is not NULL
 
@@ -209,9 +209,9 @@ RESULTS
 
 [
   {
-    "total_infected_count": 103436829,
-    "total_death_count": 1192328,
-    "total_death_percentage": 1.1527112842950744
+    "total_infected_count": 775829432,
+    "total_death_count": 7056095,
+    "total_death_percentage": 0.9094905025464413
   }
 ]
 */
