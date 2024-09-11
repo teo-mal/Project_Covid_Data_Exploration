@@ -181,7 +181,7 @@ ORDER BY
 ```
 The results
 
-![Total Infection Count](./images\infection_counts_table.png)
+![Total Infection Count](./images/infection_counts_table.png)
 Here is the breakdown:
 
 Here is the breakdown:
