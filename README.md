@@ -164,7 +164,7 @@ ORDER BY
 ## 5. Global numbers
 **In the following queries i group the results by continents.**
 
-Total number of COVID-19 infected population for each continent plus some economic comparisons 
+**A.** Total number of COVID-19 infected population for each continent plus some economic comparisons 
 
 ```sql
 SELECT
@@ -182,7 +182,7 @@ ORDER BY
 The results
 
 ![Total Infection Count](./images/infection_counts_table.png)
-Here is the breakdown:
+*Table of the Total Infection Count for each continent plus some economic comparisons. This table visualization was created with Python after importing my SQL query results*
 
 Here is the breakdown:
 
@@ -203,3 +203,52 @@ Conversely, lower counts in low-income countries could be due to less access to 
 
 These insights can help in understanding the global spread of COVID-19 and the varying impacts across different regions and income levels.
 
+**B.** Total number of population that died from COVID-19 after being infected for each continent plus some economic comparisons.
+
+```sql
+SELECT
+    location,
+    MAX(total_deaths) as total_death_count
+FROM
+    covid_deaths
+WHERE
+    continent is NULL
+GROUP BY
+    location
+ORDER BY
+    MAX(total_deaths) DESC 
+```
+The results
+
+![Total Death Count](./images/death_counts_table.png)
+*Table of the Total Death Count for each continent plus some economic comparisons. This table visualization was created with Python after importing my SQL query results*
+
+Here is the breakdown:
+Impact of Income Levels:
+Higher-income countries have higher death counts, possibly due to better reporting and higher population ages. Conversely, lower-income regions show lower death counts, potentially due to underreporting or differences in population age demographics.
+Regional Response and Impact:
+Europe and North America, with their extensive international travel and aging populations, experienced severe impacts early in the pandemic. Asia and South America also faced significant challenges, though the nature and timing of outbreaks varied across these regions.
+Underreporting and Healthcare Disparities:
+The differences between continents and income groups highlight potential disparities in healthcare access, response strategies, and the accuracy of reported data, with lower-income and less developed regions potentially underreporting due to limited resources.
+This data provides a clear picture of how different regions and income groups were affected by the pandemic in terms of total deaths, offering valuable context for public health analysis and future preparedness efforts.  
+
+ **C.** This SQL query determines the mortality rate of COVID-19 by calculating the percentage of infected individuals who were affected to the virus globally.
+
+ ```sql
+    SELECT
+    MAX(total_cases) as total_infected_count,
+    MAX(total_deaths) as total_death_count,
+    (MAX(total_deaths)/ NULLIF (MAX(total_cases), 0))*100 AS total_death_percentage
+FROM
+    covid_deaths
+WHERE
+    continent is  NULL
+HAVING
+    (MAX(total_deaths)/ NULLIF (MAX(total_cases), 0))*100 is not NULL
+```
+The results
+
+
+| Total Infected Count | Total Death Count | Total Death Percentage |
+|----------------------|-------------------|------------------------|
+| 775829432            | 7056095           |  0.909490              |
