@@ -120,3 +120,86 @@ ORDER BY
     location,
     date
 ```
+## 3. Total infection percentage
+Let's find every country's total infection percentage
+
+```sql
+SELECT
+    location,
+    population,
+    MAX(total_cases) as total_infected_count,
+    (MAX(total_cases) / population) * 100 AS total_infection_percentage
+FROM
+    covid_deaths 
+GROUP BY
+    location,
+    population
+HAVING
+   (MAX(total_cases)/population)*100 is not NULL
+ORDER BY
+    total_infection_percentage DESC
+```
+
+## 4. Total death percentage
+Let's find every country's total death percentage for infected population
+
+```sql
+SELECT
+    location,
+    population,
+    MAX(total_cases) as total_infected_count,
+    MAX(total_deaths) as total_death_count,
+    (MAX(total_deaths)/ NULLIF (MAX(total_cases), 0))*100 AS total_death_percentage
+FROM
+    covid_deaths 
+GROUP BY
+    location,
+    population
+HAVING
+    (MAX(total_deaths)/ NULLIF (MAX(total_cases), 0))*100 is not NULL
+ORDER BY
+    total_death_percentage DESC
+```
+
+## 5. Global numbers
+**In the following queries i group the results by continents.**
+
+Total number of COVID-19 infected population for each continent plus some economic comparisons 
+
+```sql
+SELECT
+    location,
+    MAX(total_cases) as total_infection_count
+FROM
+    covid_deaths
+WHERE
+    continent is NULL
+GROUP BY
+    location
+ORDER BY
+    MAX(total_cases) DESC
+```
+The results
+
+![Total Infection Count](images\infection_counts_table.png)
+Here is the breakdown:
+
+Here is the breakdown:
+
+High-Income Countries and Asia have the highest infection counts.
+Europe and Upper-Middle-Income Countries follow closely.
+Low-Income Countries and Africa have the lowest counts, which might be due to less extensive testing and different population dynamics.
+Oceania shows relatively low infection counts, likely due to its geographical isolation and smaller population. 
+
+- **Reporting and Data Discrepancies:**
+Variations in reported infection counts could be influenced by differences in healthcare infrastructure, testing availability, and reporting practices.
+
+- **Impact of Economic Status:**
+The higher infection counts in high-income and upper-middle-income countries might reflect their extensive testing and reporting capabilities rather than just the number of infections.
+Conversely, lower counts in low-income countries could be due to less access to testing and healthcare services.
+
+- **Geographical Impact:**
+ Regions with high population densities and extensive international travel, such as Europe and Asia, naturally report higher infection numbers.
+
+These insights can help in understanding the global spread of COVID-19 and the varying impacts across different regions and income levels.
+
