@@ -232,7 +232,8 @@ Underreporting and Healthcare Disparities:
 The differences between continents and income groups highlight potential disparities in healthcare access, response strategies, and the accuracy of reported data, with lower-income and less developed regions potentially underreporting due to limited resources.
 This data provides a clear picture of how different regions and income groups were affected by the pandemic in terms of total deaths, offering valuable context for public health analysis and future preparedness efforts.  
 
- **C.** This SQL query determines the mortality rate of COVID-19 by calculating the percentage of infected individuals who were affected to the virus globally.
+ **C.** -- This SQL query calculates the total percentage of global population that died after was infected by COVID-19.
+
 
  ```sql
     SELECT
