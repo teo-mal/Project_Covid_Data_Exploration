@@ -410,7 +410,7 @@ have generally managed to mitigate some of the combined risks of CVD and COVID-1
 
 ## 8. ICU admition rate
 
-In this query i try to calculates the average ICU admission rate (as a percentage) for each location, rounding the result to three decimal places. Then I retrieve the top 20 locations with the highest average ICU admission rates.
+In this query i try to calculate the average ICU admission rate (as a percentage) for each location, rounding the result to three decimal places. Then I retrieve the top 20 locations with the highest average ICU admission rates.
 
 ```sql
 SELECT
