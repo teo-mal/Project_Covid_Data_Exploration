@@ -2,7 +2,7 @@
 
 With this project, I aim to explore the global impact of COVID-19 through data analysis. By examining COVID-19 death rates, vaccination coverage, and the association between COVID-19 and pre-existing medical conditions, the project provides a comprehensive overview of these figures for various countries and continents (a project idea by [AlexTheAnalyst](https://github.com/AlexTheAnalyst) )
 
-Feel free to check out the queries for this analysis here : [project_queries](/project_queries/))
+Feel free to check out the queries for this analysis here : [project_queries](/project_queries/)
 
 # Dataset
 
