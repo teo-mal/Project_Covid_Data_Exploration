@@ -24,8 +24,8 @@ ORDER BY
 
 SELECT
     covid_vaccinations.location,
-    MAX(covid_vaccinations.total_vaccinations),
-    MAX(covid_deaths.population),
+    MAX(covid_vaccinations.total_vaccinations) as vaccinated_population,
+    MAX(covid_deaths.population) as total_population,
     (MAX(covid_vaccinations.total_vaccinations)/MAX(covid_deaths.population))*100 AS total_vaccinated_percentage
 FROM
     covid_deaths
@@ -75,76 +75,74 @@ RESULTS:
 [
   {
     "location": "Low-income countries",
-    "max": 333448906,
-    "max (1)": 737604900,
+    "vaccinated_population": 333448906,
+    "total_population": 737604900,
     "total_vaccinated_percentage": 45.20698086468786
   },
   {
     "location": "Africa",
-    "max": 863237900,
-    "max (1)": 1426736614,
+    "vaccinated_population": 863237900,
+    "total_population": 1426736614,
     "total_vaccinated_percentage": 60.504363000808226
   },
   {
     "location": "Lower-middle-income countries",
-    "max": 4954377346,
-    "max (1)": 3432097300,
+    "vaccinated_population": 4954377346,
+    "total_population": 3432097300,
     "total_vaccinated_percentage": 144.3542217174321
   },
   {
     "location": "World",
-    "max": 13578755955,
-    "max (1)": 7975105024,
+    "vaccinated_population": 13578755955,
+    "total_population": 7975105024,
     "total_vaccinated_percentage": 170.26429011450722
   },
   {
     "location": "Europe",
-    "max": 1399334097,
-    "max (1)": 744807803,
+    "vaccinated_population": 1399334097,
+    "total_population": 744807803,
     "total_vaccinated_percentage": 187.8785495215871
   },
   {
     "location": "Asia",
-    "max": 9104302147,
-    "max (1)": 4721383370,
+    "vaccinated_population": 9104302147,
+    "total_population": 4721383370,
     "total_vaccinated_percentage": 192.83124104789653
   },
   {
     "location": "North America",
-    "max": 1158547416,
-    "max (1)": 600323657,
+    "vaccinated_population": 1158547416,
+    "total_population": 600323657,
     "total_vaccinated_percentage": 192.98713327234412
   },
   {
     "location": "Oceania",
-    "max": 88342990,
-    "max (1)": 45038860,
+    "vaccinated_population": 88342990,
+    "total_population": 45038860,
     "total_vaccinated_percentage": 196.14837054046217
   },
   {
     "location": "European Union (27)",
-    "max": 951113179,
-    "max (1)": 450146793,
+    "vaccinated_population": 951113179,
+    "total_population": 450146793,
     "total_vaccinated_percentage": 211.28956015910126
   },
   {
     "location": "Upper-middle-income countries",
-    "max": 5449980906,
-    "max (1)": 2525921300,
+    "vaccinated_population": 5449980906,
+    "total_population": 2525921300,
     "total_vaccinated_percentage": 215.7621025643198
   },
   {
     "location": "South America",
-    "max": 964991405,
-    "max (1)": 436816679,
+    "vaccinated_population": 964991405,
+    "total_population": 436816679,
     "total_vaccinated_percentage": 220.91450518994492
   },
   {
     "location": "High-income countries",
-    "max": 2840861684,
-    "max (1)": 1250514600,
+    "vaccinated_population": 2840861684,
+    "total_population": 1250514600,
     "total_vaccinated_percentage": 227.1754111467391
   }
 ]
-*/
-

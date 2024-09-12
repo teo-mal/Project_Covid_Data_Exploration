@@ -1,13 +1,14 @@
 # Introduction
 
-With this project, I aim to explore the global impact of COVID-19 through data analysis. By examining COVID-19 death rates, vaccination coverage, and the association between COVID-19 and pre-existing medical conditions, the project provides a comprehensive overview of these figures for various countries and continents.
+With this project, I aim to explore the global impact of COVID-19 through data analysis. By examining COVID-19 death rates, vaccination coverage, and the association between COVID-19 and pre-existing medical conditions, the project provides a comprehensive overview of these figures for various countries and continents (a project idea by [AlexTheAnalyst](https://github.com/AlexTheAnalyst) )
 
 # Dataset
 
-Covid-19 data from 1 Jan 2020 to 28 Jul 2024 from [Our World in Data](https://ourworldindata.org/covid-deaths).
+Covid-19 data from 1 Jan 2020 to 28 Jul 2024 from [Our World in Data](https://ourworldindata.org/covid-deaths). I utilized Excel to structure and prepare my data by creating two distinct tables each tailored to hold useful information.
 
 # My Tools for the Project
 
+- **Excell :** The flexible spreadsheet solution that adapts to your needs, whether for business intelligence or personal productivity.
 - **PostgreSQL :** The powerhouse database that combines reliability with cutting-edge features.
 - **VS Code :** Your ultimate code editor for seamless coding and debugging adventures.
 - **SQL :** The language that brings your data to life with precision and power.
@@ -253,3 +254,47 @@ The results
 | Total Infected Count | Total Death Count | Total Death Percentage |
 |----------------------|-------------------|------------------------|
 | 775829432            | 7056095           |  0.909490              |
+
+## 6. Tracking Global Vaccination Progress
+I found it very enlightening το calculate the percentage of the population that has received at least one COVID-19 vaccine dose. By joining the two tables this query determines this by dividing the total number of vaccinations by the population for each location and date where data is available. 
+
+```sql
+SELECT
+    covid_deaths.continent,
+    covid_deaths.location,
+    covid_deaths.date,
+    covid_vaccinations.total_vaccinations,
+    covid_deaths.population,
+    (covid_vaccinations.total_vaccinations/covid_deaths.population)*100 AS vaccinated_percentage
+FROM
+    covid_deaths
+    JOIN covid_vaccinations
+        ON covid_deaths.location=covid_vaccinations.location
+        AND covid_deaths.date=covid_vaccinations.date
+WHERE 
+    covid_deaths.continent IS NOT NULL
+ORDER BY
+    covid_deaths.location,covid_deaths.date  
+```
+For extra insights, i wrote a query to group the results by continents to observe regional trends.
+
+```sql
+SELECT
+    covid_vaccinations.location,
+    MAX(covid_vaccinations.total_vaccinations),
+    MAX(covid_deaths.population),
+    (MAX(covid_vaccinations.total_vaccinations)/MAX(covid_deaths.population))*100 AS total_vaccinated_percentage
+FROM
+    covid_deaths
+    JOIN covid_vaccinations
+        ON covid_deaths.location=covid_vaccinations.location
+        AND covid_deaths.date=covid_vaccinations.date
+WHERE 
+    covid_deaths.continent IS NULL
+GROUP BY
+    covid_vaccinations.location
+ORDER BY
+    (MAX(covid_vaccinations.total_vaccinations)/MAX(covid_deaths.population))*100
+```
+The results
+![Total Vac Perc](images/vaccination_percentage.png)
