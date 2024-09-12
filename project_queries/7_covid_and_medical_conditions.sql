@@ -20,8 +20,6 @@ HAVING
 ORDER BY
     total_diabetes_cases DESC
 )
-
-
 SELECT
     diabetes_cases.location,
     diabetes_cases.population,
@@ -90,8 +88,6 @@ GROUP BY
 ORDER BY
     total_cardiovasc_deaths DESC
 )
-
-
 SELECT
     cardiovasc_death_cases.location,
     cardiovasc_death_cases.population,
