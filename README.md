@@ -450,23 +450,23 @@ either the data has been misreported or that there is an issue with how ICU case
 
 # Conclusion
 
-    1.Global Infection and Mortality Rates:
+1.Global Infection and Mortality Rates:
         
-    Infection Rates: Countries with higher infection rates often reflect advanced testing and reporting capabilities. High-income countries and regions with dense populations, like Europe and Asia, report more infections. Conversely, low-income countries may show lower infection counts due to less testing.
+Infection Rates: Countries with higher infection rates often reflect advanced testing and reporting capabilities. High-income countries and regions with dense populations, like Europe and Asia, report more infections. Conversely, low-income countries may show lower infection counts due to less testing.
     
-    Mortality Rates: The percentage of deaths among those infected varies significantly. Higher-income countries may report more deaths due to better healthcare infrastructure and reporting systems. In contrast, lower-income countries might underreport deaths due to limited resources.
+Mortality Rates: The percentage of deaths among those infected varies significantly. Higher-income countries may report more deaths due to better healthcare infrastructure and reporting systems. In contrast, lower-income countries might underreport deaths due to limited resources.
 
-    2.Vaccination Progress:
+2.Vaccination Progress:
     
-    Significant disparities in vaccination coverage exist globally. Wealthier regions have achieved higher vaccination rates, often exceeding 100% due to multiple doses. In contrast, lower-income regions, particularly in Africa, struggle with lower coverage, underscoring the need for equitable vaccine distribution.
+Significant disparities in vaccination coverage exist globally. Wealthier regions have achieved higher vaccination rates, often exceeding 100% due to multiple doses. In contrast, lower-income regions, particularly in Africa, struggle with lower coverage, underscoring the need for equitable vaccine distribution.
 
-    3.Impact of Pre-existing Conditions:
+3.Impact of Pre-existing Conditions:
     
-    Diabetes and Cardiovascular Disease: Countries with higher prevalence of chronic conditions like diabetes and cardiovascular disease often experience higher COVID-19 mortality rates. This highlights the importance of managing these conditions to improve resilience against pandemics.
+Diabetes and Cardiovascular Disease: Countries with higher prevalence of chronic conditions like diabetes and cardiovascular disease often experience higher COVID-19 mortality rates. This highlights the importance of managing these conditions to improve resilience against pandemics.
 
-    4.ICU Admission Rates:
+4.ICU Admission Rates:
         
-    ICU admission rates are generally low, but some countries, particularly in Europe, report higher rates. Notably, the extraordinarily high rate reported for France suggests potential data issues or misreporting.
+ICU admission rates are generally low, but some countries, particularly in Europe, report higher rates. Notably, the extraordinarily high rate reported for France suggests potential data issues or misreporting.
 
 Final Thoughts
 
