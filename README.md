@@ -314,7 +314,7 @@ have struggled to achieve even 50% coverage. This highlights ongoing challenges 
 
 ## 7. Covid and medical conditions
 
-This query seeks to explore the relationship between the prevalence of diabetes and COVID-19 deaths across all countries by joining the two tables of our data.
+**A.** This query seeks to explore the relationship between the prevalence of diabetes and COVID-19 deaths across all countries by joining the two tables of our data.
 
 ```sql
 WITH diabetes_cases AS
@@ -356,7 +356,7 @@ ORDER BY
 The relationship between diabetes prevalence and COVID-19 deaths as highlighted by this query suggests that diabetes may have played a critical role in determining COVID-19 outcomes across different countries.
 This insight underscores the importance of managing chronic health conditions to improve resilience against pandemics and other public health emergencies.
 
-This query seeks to explore the relationship between the annual number of deaths attributed to cardiovascular disease and COVID-19 deaths across all countries by joining the two tables of our data.
+**B.** This query seeks to explore the relationship between the annual number of deaths attributed to cardiovascular disease and COVID-19 deaths across all countries by joining the two tables of our data.
 
 ```sql
 WITH cardiovasc_death_cases AS
