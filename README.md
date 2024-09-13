@@ -308,13 +308,12 @@ The results
 
 Here is the breakdown:
 
-The data illustrates significant global disparities in vaccination rates, with wealthier regions achieving much higher coverage,
-often exceeding 100%, due to multiple doses administered. In contrast, low-income regions, particularly in Africa,
+The data illustrates significant global disparities in vaccination rates, with wealthier regions like Europe (187.88%), Asia (192.83%), North America (192.99%), and Oceania (196.15%) achieving much higher coverage, due to multiple doses administered. In contrast, low-income regions, particularly in Africa,
 have struggled to achieve even 50% coverage. This highlights ongoing challenges in equitable vaccine distribution and the need for continued efforts to support vaccination in under-resourced areas.
 
 ## 7. Covid and medical conditions
 
-**A.** This query seeks to explore the relationship between the prevalence of diabetes and COVID-19 deaths across all countries by joining the two tables of our data.
+**A.** .This query seeks to explore the relationship between the prevalence of diabetes and COVID-19 deaths across all countries. A Common Table Expression (CTE) is used to first calculate the total number of diabetes cases from one table of the data(covid_vaccinations table).Then, an inner join is performed between this CTE and the COVID-19 deaths table.
 
 ```sql
 WITH diabetes_cases AS
@@ -357,6 +356,9 @@ The relationship between diabetes prevalence and COVID-19 deaths as highlighted 
 This insight underscores the importance of managing chronic health conditions to improve resilience against pandemics and other public health emergencies.
 
 **B.** This query seeks to explore the relationship between the annual number of deaths attributed to cardiovascular disease and COVID-19 deaths across all countries by joining the two tables of our data.
+
+
+**B.** .This query seeks to explore the relationship between the annual number of deaths attributed to cardiovascular disease and COVID-19 deaths across all countries. A Common Table Expression (CTE) is used to first calculate the total number of cardiovascular cases from one table of the data(covid_vaccinations table).Then, an inner join is performed between this CTE and the COVID-19 deaths table to compare the total number of cardiovascular disease deaths with the total number of COVID-19 deaths for each country.
 
 ```sql
 WITH cardiovasc_death_cases AS
@@ -444,31 +446,31 @@ Non-European countries like Chile, Argentina, and South Africa also appear in th
 but their rates are much lower compared to the peak value observed.
 
 Explaining France’s High Rate:
-The figure of 1482.439% (which is not included in the chart even if France it is the top country with the highest percentag) is extraordinarily high and suggests that there may be a data error.
+The figure of 1482.439% (which is not included in the chart even if France it is the top country with the highest percentage) is extraordinarily high and suggests that there may be a data error.
 ICU admission rates are typically calculated as a percentage of total cases, so a rate above 100% indicates that
 either the data has been misreported or that there is an issue with how ICU cases and total cases are recorded.
 
 # Conclusion
 
-1.Global Infection and Mortality Rates:
+**1. Global Infection and Mortality Rates:**
         
 Infection Rates: Countries with higher infection rates often reflect advanced testing and reporting capabilities. High-income countries and regions with dense populations, like Europe and Asia, report more infections. Conversely, low-income countries may show lower infection counts due to less testing.
     
 Mortality Rates: The percentage of deaths among those infected varies significantly. Higher-income countries may report more deaths due to better healthcare infrastructure and reporting systems. In contrast, lower-income countries might underreport deaths due to limited resources.
 
-2.Vaccination Progress:
+**2. Vaccination Progress:**
     
 Significant disparities in vaccination coverage exist globally. Wealthier regions have achieved higher vaccination rates, often exceeding 100% due to multiple doses. In contrast, lower-income regions, particularly in Africa, struggle with lower coverage, underscoring the need for equitable vaccine distribution.
 
-3.Impact of Pre-existing Conditions:
+**3. Impact of Pre-existing Conditions:**
     
 Diabetes and Cardiovascular Disease: Countries with higher prevalence of chronic conditions like diabetes and cardiovascular disease often experience higher COVID-19 mortality rates. This highlights the importance of managing these conditions to improve resilience against pandemics.
 
-4.ICU Admission Rates:
+**4. ICU Admission Rates:**
         
 ICU admission rates are generally low, but some countries, particularly in Europe, report higher rates. Notably, the extraordinarily high rate reported for France suggests potential data issues or misreporting.
 
-Final Thoughts
+# Final Thoughts
 
 The project illustrates the critical importance of accurate data collection and reporting in understanding and managing global health crises. It also highlights the disparities in healthcare access and vaccine distribution that impact different regions differently. Moving forward, efforts should focus on improving data accuracy, addressing healthcare inequalities, and ensuring equitable access to vaccines and medical resources worldwide.
 
